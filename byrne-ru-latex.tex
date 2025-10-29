@@ -8178,11 +8178,12 @@ $\therefore \drawUnitLine{BE} = \drawUnitLine{AE}$ \byref{prop:I.VI}.
 \qed
 
 \startproblem{Предл. X. Задача}\label{prop:IV.X}
-\defineNewPicture[1/2]{
+\defineNewPicture[1/4]{
+startTempAngleScale(4/5);
 pair A, B, C, D, E, F;
 numeric r[];
 path cr[];
-r1 := 11/4u;
+r1 := 5/2u;
 A := (0, 0);
 cr1 := (fullcircle scaled 2r1) shifted A;
 B := (r1, 0);
@@ -8210,43 +8211,25 @@ draw byLabelsOnCircle(B)(A);
 draw byLabelsOnCircle(A)(F);
 draw byLabelPoint(D, angle(D-A)-15, 2);
 draw byLabelsOnPolygon(A, C, D)(OMIT_FIRST_LABEL+OMIT_LAST_LABEL, 0);
+stopTempAngleScale;
 }
 \drawCurrentPictureInMargin
 \problem{П}{остроить}{равнобедренный треугольник, в~котором угол при основании вдвое больше угла в~вершине.}
 
 \begin{center}
-Возьмем любую прямую \drawProportionalLine{AC,CB} \\
-и разделим ее так, что $\drawProportionalLine{AC,CB} \times \drawProportionalLine{CB} = \drawProportionalLine{AC}^2$ \byref{prop:II.XI}.
+Возьмем любую прямую \drawProportionalLine{AC,CB} и разделим ее так, что $\drawProportionalLine{AC,CB} \times \drawProportionalLine{CB} = \drawProportionalLine{AC}^2$ \byref{prop:II.XI}.
 
-С \drawProportionalLine{AC,CB} в~качестве радиуса опишем \drawCircle[middle][1/5]{A} и~впишем в~него от конца радиуса $\drawProportionalLine{BD} = \drawProportionalLine{AC}$ \byref{prop:IV.I}.
+С \drawProportionalLine{AC,CB} в~качестве радиуса опишем \drawCircle[middle][1/6]{A} и~впишем в~него от конца радиуса $\drawProportionalLine{BD} = \drawProportionalLine{AC}$ \byref{prop:IV.I}.
 
-Проведем \drawProportionalLine{AD}.
-
-Тогда \drawLine{AD,BD,CB,AC} и~есть искомый треугольник.
-
-Действительно, проведем \drawProportionalLine{CD} и~опишем \drawCircle[middle][1/3]{F} около \drawLine{AD,CD,AC} \byref{prop:IV.V}.
+Проведем \drawProportionalLine{AD}. Тогда \drawLine{AD,BD,CB,AC} и~есть искомый треугольник. Действительно, проведем \drawProportionalLine{CD} и~опишем \drawCircle[middle][1/4]{F} около \drawLine{AD,CD,AC} \byref{prop:IV.V}.
 
 Поскольку $\drawProportionalLine{AC,CB} \times \drawProportionalLine{CB} = \drawProportionalLine{AC}^2 = \drawProportionalLine{BD}^2$,\\
-$\therefore$ \drawProportionalLine{BD} касается \circleF\ \byref{prop:III.XXXVII},\\
-$\therefore \drawAngle{BDC} = \drawAngle{A}$ \byref{prop:III.XXXII}.
-
-Добавим \drawAngle{CDA} к~каждому,\\
-$\therefore \drawAngle{BDC} + \drawAngle{CDA} = \drawAngle{A} + \drawAngle{CDA}$.
+$\therefore$ \drawProportionalLine{BD} касается \circleF\ \byref{prop:III.XXXVII}, $\therefore \drawAngle{BDC} = \drawAngle{A}$ \byref{prop:III.XXXII}. Добавим \drawAngle{CDA} к~каждому, $\therefore \drawAngle{BDC} + \drawAngle{CDA} = \drawAngle{A} + \drawAngle{CDA}$.
 
 Но $\drawAngle{BDC} + \drawAngle{CDA} \mbox{ или } \drawAngle{BDC,CDA} = \drawAngle{B}$ \byref{prop:I.V}.
 
 Поскольку $\drawProportionalLine{AD} = \drawProportionalLine{AC,CB}$ \byref{prop:I.V},\\
-$\therefore \drawAngle{B} = \drawAngle{A} + \drawAngle{CDA} = \drawAngle{C}$ \byref{prop:I.XXXII}.
-
-$\therefore \drawProportionalLine{CD} = \drawProportionalLine{BD}$ \byref{prop:I.VI}.
-
-$\therefore \drawProportionalLine{BD} = \drawProportionalLine{AC} = \drawProportionalLine{CD}$ \byref{\constref}.
-
-$\therefore \drawAngle{A} = \drawAngle{CDA}$ \byref{prop:I.V}.
-
-$\therefore \drawAngle{B} = \drawAngle{BDC,CDA} = \drawAngle{C} = \drawAngle{A} + \drawAngle{CDA} = \mbox{ дважды } \drawAngle{A}$.
-
-И, следовательно, каждый из углов при основании вдвое больше угла в~вершине.
+$\therefore \drawAngle{B} = \drawAngle{A} + \drawAngle{CDA} = \drawAngle{C}$ \byref{prop:I.XXXII}. $\therefore \drawProportionalLine{CD} = \drawProportionalLine{BD}$ \byref{prop:I.VI}. $\therefore \drawProportionalLine{BD} = \drawProportionalLine{AC} = \drawProportionalLine{CD}$ \byref{\constref}. $\therefore \drawAngle{A} = \drawAngle{CDA}$ \byref{prop:I.V}. $\therefore \drawAngle{B} = \drawAngle{BDC,CDA} = \drawAngle{C} = \drawAngle{A} + \drawAngle{CDA} = \mbox{ дважды } \drawAngle{A}$. И, следовательно, каждый из углов при основании вдвое больше угла в~вершине.
 \end{center}
 
 \qed
@@ -12313,15 +12296,15 @@ pair K, L, Ma, Mb, Mc, Md, Na, Nb, Nc, Nd;
 pair d[];
 numeric s[];
 s1 := 6/5;
-A := (0, 0); B := (3/2u, 0); K := (u, u);
-d1 := (2u, 0);
+A := (0, 0); B := (6/5u, 0); K := (u, u);
+d1 := (7/4u, 0);
 C := (A scaled s1) shifted d1;
 D := (B scaled s1) shifted d1;
 L := (K scaled s1) shifted d1;
-d2 := (4u, 0);
+d2 := (7/2u, 0);
 Ob := (A scaled (s1*s1)) shifted d2;
 Oe := (B scaled (s1*s1)) shifted d2;
-E := (0, 0); F := (u, 0); Ma := (3/2u, 2/3u); Mb := (u, 4/3u); Mc := (1/5u, 3/2u); Md := (-1/4u, 5/6u);
+E := (0, 0); F := (5/6u, 0); Ma := (4/3u, 2/3u); Mb := (u, 4/3u); Mc := (1/5u, 3/2u); Md := (-1/4u, 5/6u);
 G := (E scaled s1) shifted d1;
 H := (F scaled s1) shifted d1;
 Na := (Ma scaled s1) shifted d1;
