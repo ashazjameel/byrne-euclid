@@ -191,19 +191,22 @@
 %}
 
 \newdimen\vPos
+\newdimen\vThreshold
 \newcommand{\problem}[4][4]{%
 \createNewHypothesisLabel%
 \pictureIndent=0cm%
 \vPos=\pagetotal%
+\vThreshold=5\baselineskip%
 \initialIndentation[#1]{7}%
 %\vbox{\hbox{\putLettrine{#2}}\vskip -\LettrineSize\vskip -0.5\baselineskip}%
 \noindent{\raisebox{0pt}[0pt][0pt]{\hskip-\LettrineSize\hskip-5pt\raisebox{0.5\baselineskip}{\raisebox{-\LettrineSize}{\putLettrine{#2}}}\hskip2pt}\textsc{\directlua{formatting.dedent([==[#3]==])}}}\textit{ #4}%
+\vskip \baselineskip%
 \advance\vPos by -\pagetotal%
-\advance\vPos by 3\baselineskip%
-\ifnum\vPos>0%
-\vskip \vPos%
+\vPos=-\vPos%
+\ifnum\vPos<\vThreshold%
+\vspace{-\vPos}%
+\vspace{4\baselineskip}%
 \fi%
-%\vskip 0.5\baselineskip%
 \resetInitialIndentation%
 }
 
