@@ -42,5 +42,10 @@ To build the book run `lualatex byrne-en-latex.tex` or
 `lualatex byrne-ru-latex.tex` within the book directory. To generate the
 initials run `mpost lettrines.mp` within `\lettrines` directory.
 
+NB you need the latest version of `byrne` LaTeX package to build the 
+book, since the CTAN version is somewhat old (I'll upload a new one). 
+For this, clone [`byrne-latex` repo](https://github.com/jemmybutton/byrne-latex)
+and copy `byrne.*` to the book directory.
+
 See releases for prepared .pdfs (at the moment it's an older ConTeXt 
 version). See Actions for fresher pdfs (unless they are expired).
