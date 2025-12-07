@@ -38,7 +38,7 @@
 
 \pagestyle{fancy}
 \fancyhead[LE,RO]{\thepage}
-\fancyhead[CO,CE]{\rightmark}
+\fancyhead[CO,CE]{\bookString\ \thepart.~\rightmark}
 \fancyhead[LO,RE]{}
 \fancyfoot[LE,RO]{}
 \fancyfoot[CO,CE]{}
@@ -190,22 +190,26 @@
 %\hskip -\LettrineTotalWidth \hskip -\parindent \offset[y=\LettrineTotalHeightMinusLine,x=0pt]{\hbox{\putLettrine{#1}}}{\sc\hskip\LettrinePadding \ctxlua{formatting.dedent([==[#2]==])}\ \it #3} \vskip \baselineskip
 %}
 
-\newdimen\vPos
 \newdimen\vThreshold
+\newdimen\ProblemHeight
+\newdimen\FirstLineHeight
+\newbox\FirstLineBox
 \newcommand{\problem}[4][4]{%
 \createNewHypothesisLabel%
 \pictureIndent=0cm%
-\vPos=\pagetotal%
-\vThreshold=5\baselineskip%
-\initialIndentation[#1]{7}%
-%\vbox{\hbox{\putLettrine{#2}}\vskip -\LettrineSize\vskip -0.5\baselineskip}%
-\noindent{\raisebox{0pt}[0pt][0pt]{\hskip-\LettrineSize\hskip-5pt\raisebox{0.5\baselineskip}{\raisebox{-\LettrineSize}{\putLettrine{#2}}}\hskip2pt}\textsc{\directlua{formatting.dedent([==[#3]==])}}}\textit{ #4}%
-\vskip \baselineskip%
-\advance\vPos by -\pagetotal%
-\vPos=-\vPos%
-\ifnum\vPos<\vThreshold%
-\vspace{-\vPos}%
-\vspace{4\baselineskip}%
+\vThreshold=4\baselineskip%
+\setbox0=\vbox{\initialIndentation[#1]{7}\noindent\vadjust{\break}{\raisebox{0pt}[0pt][0pt]{\hskip-\LettrineSize\hskip-5pt\raisebox{0.5\baselineskip}{\raisebox{-\LettrineSize}{\putLettrine{#2}}}\hskip2pt}\textsc{\directlua{formatting.dedent([==[#3]==])}}}\textit{ #4}%
+\vskip 0.5\baselineskip}%
+\ProblemHeight=\ht0%
+\setbox2=\copy0
+\setbox4=\vsplit2 to \maxdimen
+\setbox4=\vbox{\unvbox4 \global\setbox\FirstLineBox=\lastbox}%
+\FirstLineHeight=\ht\FirstLineBox%
+\advance\ProblemHeight by -\FirstLineHeight%
+\box0%
+\ifnum\ProblemHeight<\vThreshold%
+	\vskip -\ProblemHeight%
+	\vskip 4\baselineskip%
 \fi%
 \resetInitialIndentation%
 }
@@ -534,14 +538,14 @@
 \newcommand{\starttheoremAZ}[2][-1]{\prepropositionskip\startpropositionAZdiv[#1]{#2}}
 
 \newcommand{\prepropositionskip}{%
+	\def\tmpbeforeskip{\baselineskip}%
+	\def\tmpafterskip{\baselineskip}%
 	\ifnum\pagetotal>0%
-		\def\tmpbeforeskip{\baselineskip}%
-		\def\tmpafterskip{\baselineskip}%
 		\def\tmpstyle{\large\centering}%
 	\else%
-		~\vskip -3\baselineskip~
+		~\vspace{-3\baselineskip}~
 		\def\tmpbeforeskip{0pt}%
-		\def\tmpafterskip{0pt}%
+		\def\tmpafterskip{0.01pt}% 0pt for some reason causes headers to break
 		\def\tmpstyle{\phantom}%
 	\fi%
 	}
