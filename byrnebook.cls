@@ -38,7 +38,7 @@
 
 \pagestyle{fancy}
 \fancyhead[LE,RO]{\thepage}
-\fancyhead[CO,CE]{\bookString\ \thepart.~\rightmark}
+\fancyhead[CO,CE]{\rightmark}
 \fancyhead[LO,RE]{}
 \fancyfoot[LE,RO]{}
 \fancyfoot[CO,CE]{}
@@ -479,12 +479,12 @@
 \renewcommand\thehypothesis {\hypstr}
 \renewcommand\thesubproposition {}
 
-\newcommand{\axiommark}[1]{\markboth{#1}{#1}}%
-\newcommand{\definitionmark}[1]{\markboth{#1}{#1}}%
-\newcommand{\definitionAZmark}[1]{\markboth{#1}{#1}}%
-\newcommand{\postulatemark}[1]{\markboth{#1}{#1}}%
-\newcommand{\propositionmark}[1]{\markboth{#1}{#1}}%
-\newcommand{\propositionAZmark}[1]{\markboth{#1}{#1}}%
+\newcommand{\axiommark}[1]{\markboth{\bookString\ \thepart.~#1}{\bookString\ \thepart.~#1}}%
+\newcommand{\definitionmark}[1]{\markboth{\bookString\ \thepart.~#1}{\bookString\ \thepart.~#1}}%
+\newcommand{\definitionAZmark}[1]{\markboth{\bookString\ \thepart.~#1}{\bookString\ \thepart.~#1}}%
+\newcommand{\postulatemark}[1]{\markboth{\bookString\ \thepart.~#1}{\bookString\ \thepart.~#1}}%
+\newcommand{\propositionmark}[1]{\markboth{\bookString\ \thepart.~#1}{\bookString\ \thepart.~#1}}%
+\newcommand{\propositionAZmark}[1]{\markboth{\bookString\ \thepart.~#1}{\bookString\ \thepart.~#1}}%
 \newcommand{\subpropositionmark}[1]{}
 
 \newcommand\startaxiom{\@startsection{axiom}{1}{\z@}%
