@@ -7684,13 +7684,11 @@ draw byLine(A, F, byblack, DASHED_LINE, REGULAR_WIDTH);
 byLineDefine(A, D, byblue, SOLID_LINE, REGULAR_WIDTH);
 byLineDefine(D, B, byblue, DASHED_LINE, REGULAR_WIDTH);
 draw byNamedLineSeq(0)(AD,DB);
-if (sind(b)<>-sind(c)):
 byLineDefine(B, F, byblack, SOLID_LINE, REGULAR_WIDTH);
 byLineDefine(C, F, byblack, SOLID_LINE, THIN_WIDTH);
 draw byNamedLineSeq(0)(BF,CF);
+if (sind(b)<>-sind(c)):
 draw byLine(B, C, byred, SOLID_LINE, REGULAR_WIDTH);
-else:
-draw byLine(B, C, byblack, SOLID_LINE, REGULAR_WIDTH);
 fi;
 byLineDefine(C, E, byred, SOLID_LINE, REGULAR_WIDTH);
 byLineDefine(E, A, byred, DASHED_LINE, REGULAR_WIDTH);
