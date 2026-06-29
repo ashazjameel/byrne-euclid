@@ -8027,7 +8027,7 @@ and consequently each angle at the base is double of the vertical angle.
 
 \startproblem{Prop. XI. prob.}\label{prop:IV.XI}
 \defineNewPicture[1/4]{
-pair A, B, C, D, E, O;
+pair A, B, C, D, E, O, F, G, H, I;
 numeric r;
 r := 9/4u;
 O := (0, 0);
@@ -8036,8 +8036,15 @@ B := (dir(90+1/5(360))*r) shifted O;
 C := (dir(90+2/5(360))*r) shifted O;
 D := (dir(90+3/5(360))*r) shifted O;
 E := (dir(90+4/5(360))*r) shifted O;
+F = whatever[A,C] = whatever[B,E];
+G = whatever[A,D] = whatever[B,E];
+H = whatever[A,C] = whatever[B,D];
+I = whatever[A,D] = whatever[E,C];
 draw byArbitraryFigure.pg(C--E--B--D, byblack, 0, 1);
 draw byPolygon(A,C,D)(byyellow);
+draw byLine(F, G, white, SOLID_LINE, THIN_WIDTH);
+draw byLine(H, D, white, SOLID_LINE, THIN_WIDTH);
+draw byLine(I, C, white, SOLID_LINE, THIN_WIDTH);
 byAngleDefineExtended(A, B, C, byblack, -1)(bytransparent);
 byAngleDefineExtended(D, E, A, byblack, -1)(bytransparent);
 byAngleDefine.Cl(B, C, A, byblack, -ARC_SECTOR);
