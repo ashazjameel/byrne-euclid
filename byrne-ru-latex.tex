@@ -8687,24 +8687,26 @@ byLineDefine(B, F, byblue, DASHED_LINE, REGULAR_WIDTH);
 byLineDefine(F, G, byblack, SOLID_LINE, THIN_WIDTH);
 byLineDefine(G, H, byblack, SOLID_LINE, THIN_WIDTH);
 byLineDefine(H, A, byblack, SOLID_LINE, THIN_WIDTH);
-byLineDefine(A, C, byyellow, DASHED_LINE, REGULAR_WIDTH);
+byLineDefine(A, C, byyellow, SOLID_LINE, REGULAR_WIDTH);
 byLineDefine(C, D, byblack, SOLID_LINE, THIN_WIDTH);
 byLineDefine(D, A, byblack, SOLID_LINE, THIN_WIDTH);
 draw byNamedLineSeq(0)(AB,BF,FG,GH,HA);
 draw byNamedLineSeq(0)(AC,CD,DA);
-draw byCircleR(O, r, byblack, 0, 1, 1);
+draw byCircleR(O, r, byblack, 0, 1, 3/4);
 draw byArc.AB(O, A, B, r, byblack, 0, 0, 1, 0);
 draw byArc.BC(O, B, C, r, byblue, 0, 0, 1, 0);
 draw byArc.CF(O, C, F, r, byred, 0, 0, 1, 0);
+textLabelShift := textLabelShift + lineWidth;
 draw byLabelsOnCircle(A, B, C, F)(O);
+textLabelShift := textLabelShift - lineWidth;
 }
 \drawCurrentPictureInMargin
 \problem{В}{ данный}{круг вписать равносторонний и~равноугольный пятнадцатиугольник.}
 
-Пусть \drawUnitLine{AB} и~\drawUnitLine{BF} будут сторонами правильного пятиугольника, вписанного в~данный круг, а~\drawUnitLine{AC} стороной вписанного правильного треугольника.
+Пусть \drawSizedLine{AB} и~\drawSizedLine{BF} будут сторонами правильного пятиугольника, вписанного в~данный круг, а~\drawSizedLine{AC} стороной вписанного правильного треугольника.
 
 \begin{center}
-Дуга $\drawFromCurrentPicture{
+$\drawFromCurrentPicture[middle][arcAC]{
 startGlobalRotation(-angle(A-C));
 startAutoLabeling;
 draw byNamedArc(AB,BC);
@@ -8713,7 +8715,7 @@ stopGlobalRotation;
 }
 = \dfrac{1}{3} = \dfrac{5}{15} \drawCircle[middle][1/5]{O}$.
 
-Дуга $\drawFromCurrentPicture{
+$\drawFromCurrentPicture[middle][arcAF]{
 startGlobalRotation(-angle(A-F));
 startAutoLabeling;
 draw byNamedArc(AB,BC,CF);
@@ -8722,22 +8724,19 @@ stopGlobalRotation;
 }
 = \dfrac{2}{5} = \dfrac{6}{15} \drawCircle[middle][1/5]{O}$.
 
-Их разность $
-\drawFromCurrentPicture{
+$\arcAF - \arcAC = \drawFromCurrentPicture{
 startGlobalRotation(-angle(A-F));
-startTempScale(1/2);
 startAutoLabeling;
 draw byNamedArc(CF);
 stopAutoLabeling;
-stopTempScale;
 stopGlobalRotation;
 }
  = \dfrac{1}{15} \drawCircle[middle][1/5]{O}$.
 
-$\therefore$ дуга, стягиваемая $\drawUnitLine{FC}$, $= \dfrac{1}{15}$ всей окружности.
+$\therefore$ дуга, стягиваемая $\drawSizedLine{FC}$, $= \dfrac{1}{15}$ всей окружности.
 \end{center}
 
-А значит, если прямые, равные \drawUnitLine{FC}, вписать в~круг \byref{prop:IV.I}, получим равносторонний и~равноугольный пятнадцатиугольник, вписанный в~круг.
+А значит, если прямые, равные \drawSizedLine{FC}, вписать в~круг \byref{prop:IV.I}, получим равносторонний и~равноугольный пятнадцатиугольник, вписанный в~круг.
 
 \qed
 
