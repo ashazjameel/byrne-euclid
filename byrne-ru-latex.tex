@@ -9985,25 +9985,23 @@ $\therefore$ если целая величина относится к~цело
 
 \starttheoremAZ{Предл. E. Теорема}\label{prop:V.E}
 \defineNewPicture{
-byMagnitudeSymbolDefine.i("circle", byblue, 0);
+byMagnitudeSymbolDefine.I("circle", byblue, 0);
 byMagnitudeSymbolDefine.II("sectorUp", byblack, 1);
-byMagnitudeSymbolDefine.iii("square", byred, 0);
+byMagnitudeSymbolDefine.III("square", byred, 0);
 byMagnitudeSymbolDefine.IV("rhombus", byyellow, 0);
-byMagnitudeDefine.I(0, true)(1, 1)(i, II);
-byMagnitudeDefine.III(0, true)(1, 1)(iii, IV);
 }
 \problem{Е}{сли}{четыре величины пропорциональны, они так же пропорциональны, если совершить конверсию, то есть первая к~избытку над второй относится так же как третья к~ее избытку над четвертой.}
 
 \begin{center}
-Пусть $\drawMagnitude{I} : \drawMagnitude{II} :: \drawMagnitude{III} : \drawMagnitude{IV}$,\\
-тогда $\magnitudeI : \drawMagnitude{i} :: \magnitudeIII : \drawMagnitude{iii}$.
+Пусть $ \drawMagnitude{I} + \drawMagnitude{II} : \drawMagnitude{II} ::  \drawMagnitude{III} + \drawMagnitude{IV} : \drawMagnitude{IV}$,\\
+тогда $\magnitudeI + \magnitudeII : \drawMagnitude{I} :: \magnitudeIII + \magnitudeIV : \drawMagnitude{III}$.
 
-Поскольку $\magnitudeI : \magnitudeII :: \magnitudeIII : \magnitudeIV$;\\
-следовательно, $\magnitudei : \magnitudeII :: \magnitudeiii : \magnitudeIV$ (выдел.).
+$\because \magnitudeI + \magnitudeII : \magnitudeII :: \magnitudeIII + \magnitudeIV : \magnitudeIV$;\\
+$\therefore \magnitudeI : \magnitudeII :: \magnitudeIII : \magnitudeIV$ (выдел.).
 
-$\therefore \magnitudeII : \magnitudei :: \magnitudeIV : \magnitudeiii$ (перевер.).
+$\therefore \magnitudeII : \magnitudeI :: \magnitudeIV : \magnitudeIII$ (перевер.).
 
-$\therefore \magnitudeI : \magnitudei :: \magnitudeIII : \magnitudeiii$ (конвер.).
+$\therefore \magnitudeI + \magnitudeII : \magnitudeI :: \magnitudeIII + \magnitudeIV : \magnitudeIII$
 
 $\therefore$ если четыре величины… и~т. д.
 \end{center}

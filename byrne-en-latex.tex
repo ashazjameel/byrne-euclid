@@ -9725,25 +9725,23 @@ The term \enquote{convertendo,} by conversion, is made use of by geometricians, 
 
 \starttheoremAZ{Prop. E. Theor.}\label{prop:V.E} % Proposition with letters
 \defineNewPicture{
-byMagnitudeSymbolDefine.i("circle", byblue, 0);
+byMagnitudeSymbolDefine.I("circle", byblue, 0);
 byMagnitudeSymbolDefine.II("sectorUp", byblack, 1);
-byMagnitudeSymbolDefine.iii("square", byred, 0);
+byMagnitudeSymbolDefine.III("square", byred, 0);
 byMagnitudeSymbolDefine.IV("rhombus", byyellow, 0);
-byMagnitudeDefine.I(0, true)(1, 1)(i, II);
-byMagnitudeDefine.III(0, true)(1, 1)(iii, IV);
 }
 \problem{I}{f}{four magnitudes be proportionals, they are also proportionals by conversion: that is, the first is to its excess above the second, as the third is to its excess above the fourth.}
 
 \begin{center}
-Let $\drawMagnitude{I} : \drawMagnitude{II} :: \drawMagnitude{III} : \drawMagnitude{IV}$,\\
-then shall $\magnitudeI : \drawMagnitude{i} :: \magnitudeIII : \drawMagnitude{iii}$.
+Let $ \drawMagnitude{I} + \drawMagnitude{II} : \drawMagnitude{II} ::  \drawMagnitude{III} + \drawMagnitude{IV} : \drawMagnitude{IV}$,\\
+then shall $\magnitudeI + \magnitudeII : \drawMagnitude{I} :: \magnitudeIII + \magnitudeIV : \drawMagnitude{III}$.
 
-$\because \magnitudeI : \magnitudeII :: \magnitudeIII : \magnitudeIV$;\\ %Because
-$\therefore \magnitudei : \magnitudeII :: \magnitudeiii : \magnitudeIV$ (divid.), %therefore
+$\because \magnitudeI + \magnitudeII : \magnitudeII :: \magnitudeIII + \magnitudeIV : \magnitudeIV$;\\ %Because
+$\therefore \magnitudeI : \magnitudeII :: \magnitudeIII : \magnitudeIV$ (divid.), %therefore
 
-$\therefore \magnitudeII : \magnitudei :: \magnitudeIV : \magnitudeiii$ (inver.),
+$\therefore \magnitudeII : \magnitudeI :: \magnitudeIV : \magnitudeIII$ (inver.),
 
-$\therefore \magnitudeI : \magnitudei :: \magnitudeIII : \magnitudeiii$ (compo.).
+$\therefore \magnitudeI + \magnitudeII : \magnitudeI :: \magnitudeIII + \magnitudeIV : \magnitudeIII$ (compo.).
 
 $\therefore$ If four magnitudes, \&c.
 \end{center}
